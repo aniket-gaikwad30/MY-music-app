@@ -1,0 +1,151 @@
+/* General Styling */
+body {
+    font-family: 'Arial', sans-serif;
+    background: #121212;
+    color: white;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 100vh;
+    overflow: hidden;
+}
+
+/* 🔍 Search Bar */
+.search-container {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background: #181818;
+    padding: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+    z-index: 1000;
+}
+
+.search-container input {
+    flex: 1;
+    padding: 10px;
+    border: none;
+    font-size: 16px;
+    border-radius: 20px;
+    background: #333;
+    color: white;
+    outline: none;
+}
+
+.search-container button {
+    background: #1DB954;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    cursor: pointer;
+    font-size: 18px;
+    border-radius: 50%;
+    transition: background 0.3s;
+}
+
+.search-container button:hover {
+    background: #1ED760;
+}
+
+/* 📀 Song Info */
+.song-info {
+    margin-top: 80px;
+    text-align: center;
+    max-width: 90%;
+}
+
+#songCover {
+    width: 120px;
+    height: 120px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+}
+
+#songTitle {
+    margin-top: 10px;
+    font-size: 18px;
+}
+
+/* 🎧 Playbar */
+.playbar {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    background: #181818;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px;
+    z-index: 1000;
+}
+
+/* Left Section */
+.playbar .left {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.left img {
+    width: 45px;
+    height: 45px;
+    border-radius: 5px;
+}
+
+.left p {
+    margin: 0;
+    font-size: 14px;
+}
+
+/* Center Section */
+.center {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.center button {
+    background: none;
+    border: none;
+    color: white;
+    font-size: 22px;
+    cursor: pointer;
+}
+
+.center button:hover {
+    color: #1DB954;
+}
+
+/* Seek Bar */
+.seek-container {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+#currentTime, #totalDuration {
+    font-size: 14px;
+    color: #ccc;
+    width: 40px;
+    text-align: center;
+}
+
+#seekBar {
+    width: 40%;
+    cursor: pointer;
+}
+
+/* Right Section */
+.right {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.right input {
+    width: 50px;
+}

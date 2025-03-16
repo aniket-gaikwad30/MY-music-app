@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aniket's Music App</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+</head>
+<body>
+
+    <!-- 🔍 Search Bar -->
+    <div class="search-container">
+        <input type="text" id="searchInput" placeholder="Search for a song...">
+        <button id="searchBtn"><i class="fas fa-search"></i></button>
+    </div>
+
+    <!-- 🎵 Song Info -->
+    <div class="song-info">
+        <img id="songCover" src="default-cover.jpg" alt="Song Cover">
+        <h2 id="songTitle">Select a song</h2>
+    </div>
+
+    <!-- 🎧 Playbar -->
+    <div class="playbar">
+        <div class="left">
+            <img id="miniCover" src="default-cover.jpg" alt="Song Cover">
+            <div>
+                <p id="miniTitle">No Song Playing</p>
+                <p id="miniArtist">Unknown Artist</p>
+            </div>
+        </div>
+        <div class="center">
+            <button id="prevBtn"><i class="fas fa-step-backward"></i></button>
+            <button id="playPauseBtn"><i class="fas fa-play"></i></button>
+            <button id="nextBtn"><i class="fas fa-step-forward"></i></button>
+            <div class="seek-container">
+                <span id="currentTime">0:00</span>
+                <input type="range" id="seekBar" value="0" max="100">
+                <span id="totalDuration">0:00</span>
+            </div>
+        </div>
+        <div class="right">
+            <input type="range" id="volumeControl" min="0" max="1" step="0.1" value="1">
+        </div>
+    </div>
+
+    <audio id="audioPlayer"></audio>
+
+    <script src="script.js"></script>
+</body>
+</html>
