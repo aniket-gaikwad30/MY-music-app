@@ -8,9 +8,10 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
 </head>
 <body>
-
+    
     <!-- 🔍 Search Bar -->
     <div class="search-container">
+        <!-- <h1 >Aniket Music app</h1><br/> -->
         <input type="text" id="searchInput" placeholder="Search for a song...">
         <button id="searchBtn"><i class="fas fa-search"></i></button>
     </div>
@@ -31,13 +32,16 @@
             </div>
         </div>
         <div class="center">
-            <button id="prevBtn"><i class="fas fa-step-backward"></i></button>
-            <button id="playPauseBtn"><i class="fas fa-play"></i></button>
-            <button id="nextBtn"><i class="fas fa-step-forward"></i></button>
             <div class="seek-container">
                 <span id="currentTime">0:00</span>
-                <input type="range" id="seekBar" value="0" max="100">
+                <input id="seekBar" type="range" id="seekBar" value="0" max="100">
                 <span id="totalDuration">0:00</span>
+            </div>
+            <div class="play">
+
+                <button id="prevBtn"><i class="fas fa-step-backward"></i></button>
+                <button id="playPauseBtn"><i class="fas fa-play"></i></button>
+                <button id="nextBtn"><i class="fas fa-step-forward"></i></button>
             </div>
         </div>
         <div class="right">
