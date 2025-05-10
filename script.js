@@ -15,7 +15,7 @@ const totalDurationLabel = document.getElementById("totalDuration");
 const API_URL = "https://saavn.dev/api/search/songs?query=";
 
 // ✅ Search Songs
-searchBtn.addEventListener("click", () => {
+function searchSong() {
   const query = searchInput.value.trim();
   if (query === "") return;
 
@@ -34,6 +34,15 @@ searchBtn.addEventListener("click", () => {
         artist
       );
     });
+}
+
+searchBtn.addEventListener("click", searchSong);
+
+// Trigger search on Enter key press
+searchInput.addEventListener("keydown", (event) => {
+  if (event.key === "Enter") {
+    searchSong();
+  }
 });
 
 // ✅ Play Selected Song
