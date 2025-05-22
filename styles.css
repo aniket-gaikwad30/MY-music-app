@@ -226,3 +226,88 @@ body {
     max-width: 100%;
   }
 }
+
+
+#addToFavoritesBtn {
+  margin-top: 10px;
+  background: #1db954;
+  color: white;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 20px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+#addToFavoritesBtn:hover {
+  background: #1ed760;
+}
+
+
+
+.favorites-btn-container {
+  text-align: center;
+  margin: 20px 0;
+}
+
+.favorites-btn {
+  display: inline-block;
+  text-decoration: none;
+  background-color: #1db954;
+  color: white;
+  padding: 12px 24px;
+  border-radius: 30px;
+  font-weight: bold;
+  font-size: 16px;
+  transition: background 0.3s ease;
+}
+
+.favorites-btn:hover {
+  background-color: #1ed760;
+}
+
+.favorites-btn i {
+  margin-right: 8px;
+}
+
+
+.favorites-btn-container {
+  text-align: center;
+  margin: 20px 0;
+}
+
+.favorites-btn {
+  display: inline-block;
+  text-decoration: none;
+  background-color: #1db954;
+  color: white;
+  padding: 12px 24px;
+  border-radius: 30px;
+  font-weight: bold;
+  font-size: 16px;
+  transition: background 0.3s ease;
+}
+
+.favorites-btn:hover {
+  background-color: #1ed760;
+}
+
+.favorites-btn i {
+  margin-right: 8px;
+}
+
+
+#addToFavoritesBtn {
+  margin-top: 10px;
+  background: #1db954;
+  color: white;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 20px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+#addToFavoritesBtn:hover {
+  background: #1ed760;
+}

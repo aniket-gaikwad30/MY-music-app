@@ -105,3 +105,79 @@ function formatTime(seconds) {
   gsap.from(".playbar .center", { duration: 1, y: 50, opacity: 0, delay: 0.7 });
   gsap.from(".playbar .right", { duration: 1, x: 100, opacity: 0, delay: 0.8 });
 
+
+
+
+  const addToFavoritesBtn = document.getElementById("addToFavoritesBtn");
+  const favoritesList = document.getElementById("favoritesList");
+
+  let currentSong = null;
+
+  // 🧠 Load favorites from localStorage
+  function loadFavorites() {
+    const favorites = JSON.parse(localStorage.getItem("favorites")) || [];
+    favoritesList.innerHTML = "";
+
+    favorites.forEach((song, index) => {
+      const li = document.createElement("li");
+      li.textContent = `${song.title} - ${song.artist}`;
+      li.addEventListener("click", () => {
+        playAudio(song.url, song.cover, song.title, song.artist);
+      });
+      favoritesList.appendChild(li);
+    });
+  }
+
+  // ❤️ Add current song to favorites
+  addToFavoritesBtn.addEventListener("click", () => {
+    if (!currentSong) return;
+
+    let favorites = JSON.parse(localStorage.getItem("favorites")) || [];
+
+    // ✅ Avoid duplicates
+    const isAlreadyFavorite = favorites.some(
+      (song) => song.url === currentSong.url
+    );
+    if (isAlreadyFavorite) {
+      alert("Already in Favorites!");
+      return;
+    }
+
+    favorites.push(currentSong);
+    localStorage.setItem("favorites", JSON.stringify(favorites));
+    loadFavorites();
+    alert("Added to Favorites ❤️");
+  });
+
+  // 🧠 Set current song when playing
+  function playAudio(url, cover, title, artist) {
+    currentSong = { url, cover, title, artist };
+
+    audioPlayer.src = url;
+    audioPlayer.play();
+    songCover.src = cover;
+    miniCover.src = cover;
+    songTitle.innerText = title;
+    miniTitle.innerText = title;
+    miniArtist.innerText = artist;
+    playPauseBtn.innerHTML = '<i class="fas fa-pause"></i>';
+
+    audioPlayer.addEventListener("loadedmetadata", () => {
+      seekBar.max = audioPlayer.duration;
+      totalDurationLabel.innerText = formatTime(audioPlayer.duration);
+    });
+  }
+
+  // 🔄 Load on startup
+  window.addEventListener("DOMContentLoaded", loadFavorites);
+
+
+
+  gsap.from(".favorites-btn", {
+    y: 20,
+    opacity: 0,
+    duration: 0.8,
+    delay: 1,
+    ease: "power2.out"
+  });
+  
