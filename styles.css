@@ -1,185 +1,228 @@
-/* 🌙 General Styles */
-body {
-  font-family: 'Arial', sans-serif;
-  background: #121212;
-  color: white;
+/* General Reset & Body */
+* {
   margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Segoe UI', sans-serif;
+  background-color: #121212;
+  color: white;
   display: flex;
   flex-direction: column;
-  align-items: center;
-  height: 100vh;
-  overflow: hidden;
+  min-height: 100vh;
+  padding: 1rem;
 }
 
 /* 🔍 Search Bar */
 .search-container {
-  position: fixed;
-  top: 0;
-  width: 100%;
-  background: #181818;
-  padding: 10px;
   display: flex;
-  align-items: center;
   justify-content: center;
-  z-index: 1000;
+  align-items: center;
+  gap: 10px;
+  max-width: 600px;
+  margin: 20px auto;
+  flex-wrap: wrap;
 }
 
-.search-container input {
-  width: 60%;
-  padding: 12px;
+#searchInput {
+  flex: 1 1 auto;
+  min-width: 220px;
+  padding: 10px 15px;
+  border-radius: 30px;
   border: none;
-  font-size: 16px;
-  border-radius: 20px;
-  background: #333;
+  background: #1e1e1e;
   color: white;
   outline: none;
-  margin-right: 10px;
 }
 
-.search-container button {
-  background: #1DB954;
+#searchBtn {
+  padding: 10px 15px;
+  background: #1db954;
   color: white;
   border: none;
-  padding: 10px 15px;
+  border-radius: 30px;
   cursor: pointer;
-  font-size: 18px;
-  border-radius: 50%;
-  transition: background 0.3s;
+  transition: background 0.3s ease;
 }
 
-.search-container button:hover {
-  background: #1ED760;
+#searchBtn:hover {
+  background: #1ed760;
 }
 
-/* 📀 Song Info */
+/* 🎵 Song Info */
 .song-info {
-  margin-top: 100px;
   text-align: center;
-  max-width: 90%;
+  margin: 30px auto;
 }
 
 #songCover {
-  width: 150px;
-  height: 150px;
-  border-radius: 10px;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+  width: 220px;
+  height: 220px;
+  border-radius: 12px;
+  object-fit: cover;
+  box-shadow: 0 0 20px rgba(255, 255, 255, 0.08);
+  transition: transform 0.3s ease;
+}
+
+#songCover:hover {
+  transform: scale(1.05);
 }
 
 #songTitle {
-  margin-top: 8px;
-  font-size: 20px;
+  margin-top: 15px;
+  font-size: 22px;
+  font-weight: bold;
 }
 
 /* 🎧 Playbar */
 .playbar {
   position: fixed;
   bottom: 0;
-  width: 100%;
+  left: 0;
+  right: 0;
   background: #181818;
   display: flex;
-  align-items: center;
+  flex-wrap: wrap;
   justify-content: space-between;
-  padding: 12px;
+  align-items: center;
+  padding: 12px 20px;
+  box-shadow: 0 -3px 10px rgba(0, 0, 0, 0.4);
   z-index: 1000;
 }
 
-/* Left Section */
+/* Left Info */
 .playbar .left {
   display: flex;
   align-items: center;
-  gap: 8px;
+  gap: 10px;
+  min-width: 150px;
 }
 
-.left img {
-  width: 50px;
-  height: 50px;
-  border-radius: 5px;
+#miniCover {
+  width: 45px;
+  height: 45px;
+  border-radius: 6px;
+  object-fit: cover;
 }
 
-.left p {
-  margin: 0;
+#miniTitle {
+  font-weight: bold;
+}
+
+#miniArtist {
   font-size: 14px;
+  color: #b3b3b3;
 }
 
-/* Center Section */
-.center {
+/* Center Controls */
+.playbar .center {
+  flex: 1 1 auto;
   display: flex;
   flex-direction: column;
   align-items: center;
   gap: 8px;
+  padding: 10px;
 }
 
-.center button {
-  background: none;
-  border: none;
-  color: white;
-  font-size: 24px;
-  cursor: pointer;
-  transition: transform 0.2s ease;
-}
-
-.center button:hover {
-  color: #1DB954;
-  transform: scale(1.1);
-}
-
-/* Seek Bar */
 .seek-container {
   display: flex;
   align-items: center;
   gap: 8px;
-}
-
-#currentTime, #totalDuration {
-  font-size: 12px;
-  color: #ccc;
-  width: 40px;
-  text-align: center;
+  width: 100%;
+  max-width: 500px;
+  font-size: 14px;
+  color: #aaa;
 }
 
 #seekBar {
-  width: 300px;
+  flex: 1;
+  appearance: none;
+  height: 4px;
+  background: #555;
+  border-radius: 4px;
+}
+
+#seekBar::-webkit-slider-thumb {
+  appearance: none;
+  height: 12px;
+  width: 12px;
+  background: #1db954;
+  border-radius: 50%;
   cursor: pointer;
 }
 
-/* Right Section */
-.right {
+/* Buttons */
+.play {
   display: flex;
   align-items: center;
-  gap: 8px;
+  gap: 20px;
 }
 
-.right input {
+.play button {
+  background: none;
+  border: none;
+  color: white;
+  font-size: 20px;
+  cursor: pointer;
+  transition: transform 0.2s ease;
+}
+
+.play button:hover {
+  transform: scale(1.2);
+}
+
+/* Volume */
+.playbar .right {
+  display: flex;
+  align-items: center;
+  min-width: 100px;
+}
+
+#volumeControl {
   width: 100px;
+  appearance: none;
+  height: 4px;
+  background: #555;
+  border-radius: 4px;
 }
 
-/* 📱 Mobile Responsiveness */
-@media (max-width: 600px) {
-  .search-container input {
-    width: 70%;
-    font-size: 14px;
+#volumeControl::-webkit-slider-thumb {
+  appearance: none;
+  height: 12px;
+  width: 12px;
+  background: #1db954;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+/* 📱 Responsive Design */
+@media (max-width: 768px) {
+  .playbar {
+    flex-direction: column;
+    gap: 10px;
+    padding: 15px;
+  }
+
+  .playbar .left,
+  .playbar .center,
+  .playbar .right {
+    width: 100%;
+    justify-content: center;
+    text-align: center;
   }
 
   #songCover {
-    width: 100px;
-    height: 100px;
+    width: 160px;
+    height: 160px;
   }
 
-  .center button {
-    font-size: 20px;
+  #volumeControl {
+    width: 80%;
   }
 
-  #seekBar {
-    width: 200px;
+  .seek-container {
+    max-width: 100%;
   }
-
-  .right input {
-    width: 80px;
-  }
-}
-
-/* 🎶 Play/Pause Animation */
-.scale-animation {
-  transform: scale(1.2);
-  transition: transform 0.2s ease;
 }

@@ -96,3 +96,12 @@ function formatTime(seconds) {
   let sec = Math.floor(seconds % 60);
   return `${min}:${sec.toString().padStart(2, "0")}`;
 }
+
+
+  // Animate on load
+  gsap.from(".search-container", { duration: 1, y: -30, opacity: 0, ease: "power2.out" });
+  gsap.from(".song-info", { duration: 1, scale: 0.9, opacity: 0, delay: 0.3, ease: "back.out(1.7)" });
+  gsap.from(".playbar .left", { duration: 1, x: -100, opacity: 0, delay: 0.6 });
+  gsap.from(".playbar .center", { duration: 1, y: 50, opacity: 0, delay: 0.7 });
+  gsap.from(".playbar .right", { duration: 1, x: 100, opacity: 0, delay: 0.8 });
+
